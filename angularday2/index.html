@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h2>Todo</h2>
+<h2>Agenda</h2>
 <div ng-controller="TodoListController as todoList">
     <span>{{todoList.remaining()}} of {{todoList.todos.length}} remaining</span>
     [ <a href="" ng-click="todoList.archive()">archive</a> ]
@@ -20,7 +20,7 @@
     </ul>
     <form ng-submit="todoList.addTodo()">
         <input type="text" ng-model="todoList.todoText" size="30"
-               placeholder="add new todo here">
+               placeholder="Aggiungi nuovo Appunto">
         <input class="btn-primary" type="submit" value="add">
     </form>
 </div>

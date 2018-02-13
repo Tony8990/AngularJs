@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Table</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+
+</head>
+<body>
+<div ng-app="myApp" ng-controller="namesCtrl">
+    <table border="1" width="100%">
+        <tr>
+            <th ng-click="orderByMe('name')" ng-click="changeColor('name')">Name</th>
+            <th ng-click="orderByMe('country')" ng-click="changeColor('country')">Country</th>
+        </tr>
+        <tr ng-repeat="x in names | orderBy:myOrderBy">
+            <td>{{x.name}}{{x.color}}</td>
+            <td>{{x.country}}{{x.color}}</td>
+        </tr>
+    </table>
+</div>
+
+
+<script src="controller.js"></script>
+</body>
+</html>
