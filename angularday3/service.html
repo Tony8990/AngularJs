@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../angular.min.js"></script>
+</head>
+
+<body ng-app="myapp" ng-controller="MyController">
+<p>The URL is: {{url}}</p>
+<ul>
+    <li>{{protocol}}</li>
+    <li>{{host}}</li>
+    <li>{{port}}</li>
+</ul>
+
+<script>
+    var module = angular.module('myapp', []);
+    module.controller("MyController", function ($scope, $location) {
+        $scope.url = $location.absUrl();
+        $scope.protocol = $location.protocol();
+        $scope.host = $location.host();
+        $scope.port = $location.port();
+    });
+</script>
+</body>
+</html>

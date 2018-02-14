@@ -3,7 +3,7 @@ var myAppModule = angular.module('myAppModule', []);
 myAppModule.controller('myDemoCtrl', function ($scope) {
     $scope.colorsArray = ['red', 'green', 'blue', 'purple', 'olive']
 });
-myAppModule.directive('colorList', function ($compile) {
+myAppModule.directive('colorList', function () {
     return {
         restrict: 'AE',
         template: "<button ng-click='showHideColors()' type='button'>"
