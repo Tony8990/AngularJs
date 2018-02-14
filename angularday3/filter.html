@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../angular.min.js"></script>
+</head>
+<body ng-app ng-controller="MyFilterDemoCtrl">
+<h2>Gigabytes used over the last 3 months</h2>
+<ul>
+    <li ng-repeat="gigabytes in data.monthlyUsageHistory | limitTo:5">
+        {{ gigabytes | number:2}}
+    </li>
+</ul>
+<script>
+    function MyFilterDemoCtrl($scope) {
+        var someData = {
+            firstName: 'JENNA',
+            surname: 'GRANT',
+            dateJoined: new Date(2010, 2, 23),
+            consumption: 123.659855,
+            plan: 'super-basic-plan',
+// Last 12 months of data usage
+            monthlyUsageHistory:
+                [123.659855,
+                    89.645222,
+                    97.235644,
+                    129.555555,
+                    188.699855,
+                    65.652545,
+                    123.659855,
+                    89.645222,
+                    97.235644,
+                    129.555555,
+                    188.699855,
+                    65.652545]
+        };
+        $scope.data = someData;
+    }
+</script>
+</body>
+</html>
